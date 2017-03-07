@@ -1,0 +1,16 @@
+body {
+  background: rgb(66, 66, 186);
+}
+
+h1, h2, p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 6em;
+  color: #fff;
+  text-align: center;
+}
+
+.weatherContent {
+  margin: 0 auto;
+  padding: 15% 30%;
+}
