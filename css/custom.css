@@ -10,6 +10,10 @@ h1, h2, p {
   text-align: center;
 }
 
+p {
+  font-size: 3em;
+}
+
 #cityName {
   margin-bottom: 0.5em;
 }
