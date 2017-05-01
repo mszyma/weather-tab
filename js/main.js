@@ -9,7 +9,7 @@ $.getJSON('http://ipinfo.io/json', function(data) {
     };
     console.log(coords.latitude, coords.longitude);
 
-//Getting weather
+    //Getting weather
     var params = [
         "http://api.openweathermap.org/data/2.5/weather?",
         coords.latitude,
@@ -24,7 +24,7 @@ $.getJSON('http://ipinfo.io/json', function(data) {
     $(document).ready(function() {
         $.getJSON(url, function(json) {
             console.log(json);
-            var temp = json.main.temp;
+            var temp = json.main.temp; // Adding temperature
             $("#temp").html(temp); // Adding temperature
 
             var weatherResult = json.weather[0].main;
@@ -50,6 +50,14 @@ $.getJSON('http://ipinfo.io/json', function(data) {
                 case "Clouds":
                     $("#weatherIconOpenWeather").html("<img src='img/cloudy.png' class='img-responsive' alt='cloudy'>");
                     break;
+            }
+
+            function fahrenheit(input) { //convert to Fahrenheit
+
+                var conversion;
+                conversion = (9.0 / 5.0) * (input + 32);
+
+                return conversion;
             }
         });
     });
