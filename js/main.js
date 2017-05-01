@@ -21,10 +21,12 @@ $.getJSON('http://ipinfo.io/json', function(data) {
     var url = params[0] + "lat=" + params[1] + "&lon=" + params[2] + params[3] + params[4];
     console.log(url);
 
+    // Displaying weather
     $(document).ready(function() {
+        $('.celc').hide();
         $.getJSON(url, function(json) {
             console.log(json);
-            var temp = json.main.temp; // Adding temperature
+            var temp = json.main.temp; // Getting temperature
             $("#temp").html(temp); // Adding temperature
 
             var weatherResult = json.weather[0].main;
@@ -53,12 +55,26 @@ $.getJSON('http://ipinfo.io/json', function(data) {
             }
 
             function fahrenheit(input) { //convert to Fahrenheit
-
                 var conversion;
                 conversion = (9.0 / 5.0) * (input + 32);
-
                 return conversion;
             }
+            console.log(fahrenheit(temp));
+
+            $('.fahren').click(function() {
+              $('#temp').html(fahrenheit(temp));
+              $('.fahren').hide();
+              $('.celc').show();
+            });
+            $('.celc').click(function() {
+              $('#temp').html(temp);
+              $('.celc').hide();
+              $('.fahren').show();
+            });
+
+
         });
     });
+
+
 });

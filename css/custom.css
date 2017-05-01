@@ -25,3 +25,12 @@ h1, h2, p {
   display: inline-block;
   margin: left;
 }
+
+.weatherDetails {
+  text-align: center;
+}
+
+#tempSwitch {
+  color: white;
+  font-size: 4rem;
+}
