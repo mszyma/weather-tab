@@ -10,9 +10,13 @@ h1, h2, p {
   text-align: center;
 }
 
+#cityName {
+  margin-bottom: 0.5em;
+}
+
 .weatherContent {
   margin: 0 auto;
-  padding: 15% 30%;
+  padding: 5% 10%;
 }
 
 .weatherIcon > img {
