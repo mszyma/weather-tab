@@ -1,5 +1,5 @@
 //Getting location
-$.getJSON('http://ipinfo.io/json', function(data) {
+$.getJSON('https://ipinfo.io/json', function(data) {
     console.log(data);
     $("#cityName").html(data.city);
     var loc = data.loc.split(',');
@@ -11,7 +11,7 @@ $.getJSON('http://ipinfo.io/json', function(data) {
 
     //Getting weather
     var params = [
-        "http://api.openweathermap.org/data/2.5/weather?",
+        "https://api.openweathermap.org/data/2.5/weather?",
         coords.latitude,
         coords.longitude,
         "&APPID=2d34a8421468ffb44f89aeceaf08ac07",
