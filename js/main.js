@@ -27,7 +27,7 @@ $.getJSON('https://ipinfo.io/json', function(data) {
         $.getJSON(url, function(json) {
             console.log(json);
             var temp = json.main.temp; // Getting temperature
-            $("#temp").html(temp); // Adding temperature
+            $("#temp").html(temp.toFixed(1)); // Adding temperature
 
             var weatherResult = json.weather[0].main;
             switch (weatherResult) {
@@ -57,7 +57,7 @@ $.getJSON('https://ipinfo.io/json', function(data) {
             function fahrenheit(input) { //convert to Fahrenheit
                 var conversion;
                 conversion = (9.0 / 5.0) * (input + 32);
-                return conversion;
+                return conversion.toFixed(1);
             }
             console.log(fahrenheit(temp));
 
@@ -71,8 +71,6 @@ $.getJSON('https://ipinfo.io/json', function(data) {
               $('.celc').hide();
               $('.fahren').show();
             });
-
-
         });
     });
 
