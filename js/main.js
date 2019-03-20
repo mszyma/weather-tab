@@ -57,7 +57,7 @@ $.getJSON('https://ipinfo.io/json', function(data) {
             function fahrenheit(input) { //convert to Fahrenheit
                 var conversion;
                 conversion = (9.0 / 5.0) * (input + 32);
-                return conversion;
+                return conversion.toFixed(1);
             }
             console.log(fahrenheit(temp));
 
