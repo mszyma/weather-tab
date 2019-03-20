@@ -1,13 +1,13 @@
 //Getting location
 $.getJSON('https://ipinfo.io/json', function(data) {
-    console.log(data);
+    //console.log(data);
     $("#cityName").html(data.city);
     var loc = data.loc.split(',');
     var coords = {
         latitude: loc[0],
         longitude: loc[1]
     };
-    console.log(coords.latitude, coords.longitude);
+    //console.log(coords.latitude, coords.longitude);
 
     //Getting weather
     var params = [
@@ -19,15 +19,15 @@ $.getJSON('https://ipinfo.io/json', function(data) {
     ];
 
     var url = params[0] + "lat=" + params[1] + "&lon=" + params[2] + params[3] + params[4];
-    console.log(url);
+    //console.log(url);
 
     // Displaying weather
     $(document).ready(function() {
         $('.celc').hide();
         $.getJSON(url, function(json) {
-            console.log(json);
+            //console.log(json);
             var temp = json.main.temp; // Getting temperature
-            temp.toFixed(1);
+            temp.toFixed(1); //change to 1 decimal
             $("#temp").html(temp); // Adding temperature
 
             var weatherResult = json.weather[0].main;
@@ -60,7 +60,7 @@ $.getJSON('https://ipinfo.io/json', function(data) {
                 conversion = (9.0 / 5.0) * (input + 32);
                 return conversion.toFixed(1);
             }
-            console.log(fahrenheit(temp));
+            //console.log(fahrenheit(temp));
 
             $('.fahren').click(function() {
               $('#temp').html(fahrenheit(temp));
