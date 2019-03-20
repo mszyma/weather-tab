@@ -18,6 +18,11 @@ p {
   margin-bottom: 0.5em;
 }
 
+#switch {
+  font-size: 2rem;
+  padding-top: 15%;
+}
+
 .weatherContent {
   margin: 0 auto;
   padding: 5% 10%;
