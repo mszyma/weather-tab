@@ -27,7 +27,7 @@ $.getJSON('https://ipinfo.io/json', function(data) {
         $.getJSON(url, function(json) {
             console.log(json);
             var temp = json.main.temp; // Getting temperature
-            $("#temp").html(temp); // Adding temperature
+            $("#temp").html(temp.toFixed(1)); // Adding temperature
 
             var weatherResult = json.weather[0].main;
             switch (weatherResult) {
