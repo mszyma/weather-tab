@@ -71,8 +71,6 @@ $.getJSON('https://ipinfo.io/json', function(data) {
               $('.celc').hide();
               $('.fahren').show();
             });
-
-
         });
     });
 
